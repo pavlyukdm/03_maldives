@@ -52,16 +52,23 @@ fieldset {
   margin: 0; }
 
 body {
-  font-size: 16px;
   color: #000;
-  background-color: #fff; }
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif; }
+
+p {
+  font-size: 14px;
+  text-align: justify;
+  line-height: 1.86;
+  letter-spacing: 0.35px; }
 
 header {
   display: flex;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; }
+  width: 100%;
+  z-index: 9; }
 
 .header_left {
   padding: 0 60px;
@@ -183,9 +190,225 @@ header {
   transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
 
 .main-slider {
-  display: flex; }
-  .main-slider .main-slider_left {
-    background-color: #0b1326;
-    flex: 0 0 61%; }
-  .main-slider .main-slider_left {
-    flex: 0 0 39%; }
+  background-position: 0 0;
+  background-size: 69% 100%;
+  background-repeat: no-repeat;
+  background: #020024;
+  background: linear-gradient(90deg, #0b1326 0%, #0b1326 61%, transparent 61%, transparent 100%);
+  position: relative;
+  padding-top: 115px;
+  padding-bottom: 75px; }
+  .main-slider .swiper-slide {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    align-items: center; }
+    .main-slider .swiper-slide .slide-left-col {
+      flex: 0 0 61%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding-left: 340px;
+      padding-top: 270px;
+      padding-bottom: 350px;
+      z-index: 1; }
+    .main-slider .swiper-slide .slide-right-col {
+      padding-bottom: 30px;
+      flex: 0 0 39%; }
+      .main-slider .swiper-slide .slide-right-col img {
+        position: relative;
+        left: -36.5%;
+        max-width: 130%; }
+      .main-slider .swiper-slide .slide-right-col .slide-descr {
+        color: #050a16;
+        font-weight: 700;
+        font-size: 15px;
+        position: absolute;
+        top: 25%;
+        right: 1%;
+        transform: rotate(90deg);
+        letter-spacing: 3.5px; }
+    .main-slider .swiper-slide .suptitle {
+      font-size: 16px;
+      font-weight: 700;
+      color: #f91c3b;
+      padding-left: 97px;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 4px; }
+      .main-slider .swiper-slide .suptitle::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 3px;
+        height: 13px;
+        background-color: #f91c3b; }
+    .main-slider .swiper-slide .title {
+      font-size: 78px;
+      font-weight: 700;
+      color: #fcfcfc;
+      padding: 44px 0 48px;
+      font-family: 'Kalam', cursive;
+      letter-spacing: -3px;
+      line-height: 1; }
+    .main-slider .swiper-slide .button {
+      padding-bottom: 21px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      color: #fcfcfc;
+      border-bottom: 2px solid #fcfcfc;
+      transition: .2s linear; }
+      .main-slider .swiper-slide .button:hover {
+        color: #f91c3b;
+        border-bottom-color: #f91c3b; }
+
+.main-slider .slider-container {
+  overflow: hidden; }
+
+.main-slider .swiper-container-horizontal > .swiper-pagination-progressbar {
+  width: 192px;
+  height: 2px;
+  left: auto;
+  top: auto;
+  bottom: 46px;
+  right: 300px;
+  background-color: #093868; }
+
+.main-slider .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background-color: #f91c3b; }
+
+.main-slider .swiper-button {
+  width: 13%;
+  height: 35%;
+  background-size: 0 0 !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  transition: background-size 2s ease-in; }
+  .main-slider .swiper-button:hover {
+    background-size: cover !important; }
+  .main-slider .swiper-button svg {
+    fill: #fcfcfc;
+    width: 50px;
+    position: relative;
+    top: 100px;
+    transition: .5s linear; }
+
+.main-slider .swiper-button-next {
+  bottom: -50px;
+  position: absolute;
+  left: 13%;
+  top: auto; }
+  .main-slider .swiper-button-next svg {
+    transform: rotate(180deg); }
+
+.main-slider .swiper-button-prev {
+  bottom: -50px;
+  position: absolute;
+  left: 0;
+  top: auto; }
+
+.main-slider .progressbar-slide-index {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #093868;
+  bottom: 40px;
+  right: 500px;
+  position: absolute; }
+
+.main-slider .progressbar-slide-total {
+  font-size: 14px;
+  font-weight: 600;
+  color: #093868;
+  bottom: 40px;
+  right: 274px;
+  position: absolute; }
+
+body .swiper-button-prev:after {
+  content: ''; }
+
+body .swiper-button-next:after {
+  content: ''; }
+
+.main-slider .swiper-button.swiper-button-disabled {
+  display: none; }
+
+.main-slider .slider-counter {
+  font-weight: 700;
+  display: flex;
+  align-items: flex-start;
+  position: absolute;
+  left: 50%; }
+  .main-slider .slider-counter .current-slide {
+    font-size: 40px;
+    color: #f91c3b;
+    line-height: 0.8; }
+  .main-slider .slider-counter .total-slides {
+    font-size: 14px;
+    color: #fcfcfc;
+    position: relative;
+    letter-spacing: 2.8px; }
+    .main-slider .slider-counter .total-slides::before {
+      position: absolute;
+      content: '';
+      width: 20px;
+      height: 2px;
+      background-color: #ffffff;
+      bottom: -5px;
+      right: 2px; }
+  .main-slider .slider-counter .delimeter {
+    padding: 0 8px;
+    font-size: 14px;
+    color: #fcfcfc; }
+
+.main-slider .swiper-button:hover .slide-counter {
+  color: #f91c3b; }
+
+.main-slider .swiper-button:hover svg {
+  fill: #f91c3b; }
+
+.main-slider .slide-counter {
+  font-size: 163.5px;
+  font-weight: bold;
+  color: #fcfcfc;
+  position: absolute;
+  transition: .3s linear; }
+
+.title-block .suptitle {
+  font-size: 15px;
+  font-weight: bold;
+  color: #f91c3b;
+  line-height: 2.3;
+  padding-left: 95px;
+  border-bottom: 2px solid #f91c3b;
+  display: inline-block; }
+
+.title-block .title {
+  padding-left: 95px;
+  font-size: 36px;
+  font-weight: bold;
+  letter-spacing: -0.9px;
+  font-family: 'Quicksand', sans-serif;
+  max-width: 530px;
+  padding-top: 18px;
+  padding-bottom: 52px;
+  line-height: 1.31; }
+  .title-block .title__blue {
+    color: #093868; }
+
+#welcome {
+  padding-top: 160px;
+  padding-bottom: 160px;
+  position: relative; }
+  #welcome .col-img {
+    position: absolute;
+    top: 0;
+    right: auto;
+    left: 61%; }
+  #welcome .text {
+    padding-top: 10px;
+    padding-bottom: 30px;
+    padding-right: 77px;
+    color: #898e9a; }
