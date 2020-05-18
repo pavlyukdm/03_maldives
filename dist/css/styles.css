@@ -54,7 +54,9 @@ fieldset {
 body {
   color: #000;
   background-color: #fff;
-  font-family: 'Open Sans', sans-serif; }
+  background-image: url(../img/body-bg.jpg);
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden; }
 
 p {
   font-size: 14px;
@@ -377,6 +379,7 @@ body .swiper-button-next:after {
   transition: .3s linear; }
 
 .title-block .suptitle {
+  text-transform: uppercase;
   font-size: 15px;
   font-weight: bold;
   color: #f91c3b;
@@ -397,6 +400,11 @@ body .swiper-button-next:after {
   line-height: 1.31; }
   .title-block .title__blue {
     color: #093868; }
+  .title-block .title__white {
+    color: #fcfcfc; }
+
+.title-block p {
+  padding-left: 95px; }
 
 #welcome {
   padding-top: 160px;
@@ -412,3 +420,269 @@ body .swiper-button-next:after {
     padding-bottom: 30px;
     padding-right: 77px;
     color: #898e9a; }
+
+.bestintravel {
+  margin: 0 -35px;
+  position: relative;
+  padding-top: 45px;
+  padding-bottom: 100px; }
+  .bestintravel .slider-counter {
+    letter-spacing: 2px;
+    line-height: 0.8;
+    display: flex;
+    color: #898e9a;
+    position: absolute;
+    bottom: 143px;
+    right: 19%;
+    font-size: 12px;
+    font-weight: bold; }
+    .bestintravel .slider-counter .current-slide {
+      font-size: 22px;
+      color: #f91c3b; }
+  .bestintravel .img-overlay {
+    position: absolute;
+    top: -215px;
+    right: 0;
+    width: 505px;
+    height: 421px;
+    background-color: rgba(249, 28, 59, 0.7); }
+    .bestintravel .img-overlay span {
+      padding: 30px;
+      color: #ffffff;
+      font-family: Quicksand;
+      font-size: 24px;
+      font-weight: bold;
+      line-height: 1.42;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: inline-block; }
+
+.swiper-container.besttravel-carousel {
+  position: relative;
+  left: -28.05%;
+  padding-bottom: 120px; }
+  .swiper-container.besttravel-carousel .swiper-slide {
+    position: relative; }
+    .swiper-container.besttravel-carousel .swiper-slide img {
+      width: 100%;
+      max-width: 100%; }
+    .swiper-container.besttravel-carousel .swiper-slide .caption {
+      position: absolute;
+      bottom: -110px;
+      left: 55px;
+      background-color: #fff;
+      padding: 38px 40px;
+      max-width: 445px;
+      box-sizing: border-box;
+      box-shadow: 1px 4.9px 30px 0 rgba(0, 0, 0, 0.04); }
+      .swiper-container.besttravel-carousel .swiper-slide .caption h5 {
+        font-family: Quicksand;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1.36;
+        color: #093868;
+        margin-bottom: 17px; }
+      .swiper-container.besttravel-carousel .swiper-slide .caption .descr {
+        font-size: 14px;
+        line-height: 1.86;
+        letter-spacing: 0.35px;
+        color: #898e9a;
+        padding: 5px 0; }
+  .swiper-container.besttravel-carousel .swiper-navigation .swiper-button {
+    width: 28px;
+    position: absolute;
+    bottom: 30px;
+    top: auto;
+    right: 0;
+    left: auto; }
+    .swiper-container.besttravel-carousel .swiper-navigation .swiper-button-prev {
+      right: 130px; }
+      .swiper-container.besttravel-carousel .swiper-navigation .swiper-button-prev path {
+        fill: #093868; }
+    .swiper-container.besttravel-carousel .swiper-navigation .swiper-button-next {
+      transform: rotate(180deg);
+      right: 66px; }
+      .swiper-container.besttravel-carousel .swiper-navigation .swiper-button-next path {
+        fill: #093868; }
+
+.services {
+  background-image: url(../img/services-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 200px 0 160px; }
+  .services .services_item {
+    color: #fcfcfc; }
+    .services .services_item img {
+      margin-bottom: 30px; }
+    .services .services_item .title {
+      font-family: Quicksand;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.44;
+      text-align: justify;
+      margin-bottom: 34px; }
+    .services .services_item .descr {
+      font-size: 14px;
+      line-height: 1.86;
+      letter-spacing: 0.35px;
+      text-align: justify; }
+
+.choice .swiper-container-wrapper {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto; }
+
+.choice {
+  position: relative;
+  padding-top: 150px;
+  padding-bottom: 105px; }
+  .choice .choice-carousel {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    max-width: 1110px;
+    margin: 70px auto 0; }
+    .choice .choice-carousel .swiper-slide {
+      transition: 1s ease; }
+      .choice .choice-carousel .swiper-slide img {
+        max-width: 100%; }
+    .choice .choice-carousel .swiper-slide-next {
+      zoom: 1.05;
+      transform: translateY(-10px); }
+      .choice .choice-carousel .swiper-slide-next img {
+        box-shadow: 0px 20px 30px 0px rgba(9, 41, 75, 0.25); }
+  .choice .swiper-navigation .swiper-button {
+    outline: none;
+    width: 28px;
+    position: absolute;
+    top: 50%;
+    right: auto;
+    left: auto; }
+    .choice .swiper-navigation .swiper-button-prev {
+      right: auto;
+      left: -170px; }
+      .choice .swiper-navigation .swiper-button-prev path {
+        fill: #f91c3b; }
+    .choice .swiper-navigation .swiper-button-next {
+      transform: rotate(180deg);
+      right: -170px; }
+      .choice .swiper-navigation .swiper-button-next path {
+        fill: #f91c3b; }
+
+.blog-title-section {
+  margin-bottom: 40px;
+  position: relative; }
+  .blog-title-section::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #f91c3b; }
+  .blog-title-section .container {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background-color: #f91c3b; }
+    .blog-title-section .container .title-block .suptitle {
+      color: #0b1326;
+      border-bottom-color: #0b1326; }
+    .blog-title-section .container .title-block p {
+      color: #fcfcfc;
+      max-width: 670px; }
+
+.blog-item {
+  margin-bottom: 30px;
+  transition: 0.3s ease;
+  position: relative; }
+  .blog-item_media {
+    line-height: 0; }
+    .blog-item_media::after {
+      transition: 0.2s ease;
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(9, 56, 104, 0.7) 100%); }
+    .blog-item_media img {
+      max-width: 100%; }
+  .blog-item_content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 40px; }
+  .blog-item:hover {
+    box-shadow: 0px 20px 30px 0 rgba(9, 41, 75, 0.35); }
+    .blog-item:hover .blog-item_media::after {
+      background: linear-gradient(180deg, rgba(9, 56, 104, 0.9) 0%, rgba(9, 56, 104, 0.9) 100%); }
+    .blog-item:hover .blog-item-main-content {
+      bottom: 0; }
+    .blog-item:hover .blog-item_descr {
+      opacity: 1;
+      bottom: 0px; }
+    .blog-item:hover .read_more {
+      opacity: 1;
+      bottom: 0px; }
+
+.blog-item_content {
+  max-width: 450px;
+  color: #fcfcfc; }
+  .blog-item_content date {
+    position: relative;
+    bottom: 0;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    line-height: 0.8;
+    padding-left: 30px;
+    border-left: 2px solid #fcfcfc; }
+  .blog-item_content .blog-item-main-content {
+    position: relative;
+    bottom: -150px;
+    transition: 0.3s ease; }
+    .blog-item_content .blog-item-main-content .blog-item_title {
+      padding-bottom: 10px;
+      padding-top: 6px;
+      bottom: 0;
+      font-family: Quicksand;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 1.43; }
+      .blog-item_content .blog-item-main-content .blog-item_title.title_large {
+        font-size: 28px; }
+  .blog-item_content .blog-item_descr {
+    display: inline-block;
+    max-height: 100px;
+    overflow: hidden;
+    position: relative;
+    bottom: -200px;
+    transition: 0.3s ease;
+    opacity: 0;
+    font-size: 14px;
+    line-height: 1.86;
+    letter-spacing: 0.35px;
+    text-align: left;
+    color: #97adc4; }
+  .blog-item_content .read_more {
+    position: relative;
+    bottom: -200px;
+    transition: 0.3s ease;
+    opacity: 0;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 2.17;
+    letter-spacing: 3px;
+    color: #97adc4;
+    padding: 15px 0;
+    border-bottom: 1px solid #97adc4; }
+    .blog-item_content .read_more:hover {
+      color: #fcfcfc;
+      border-bottom-color: #fcfcfc; }

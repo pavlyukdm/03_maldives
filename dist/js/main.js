@@ -19,13 +19,34 @@ var headerSwiper = new Swiper('.slider-container', {
 	},
 });
 
+
+var bestTravelSwiper = new Swiper('.besttravel-carousel', {
+	slidesPerView: 2,
+	spaceBetween: 30,
+	 loop: true,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+});
+
+var choiceSwiper = new Swiper('.choice-carousel', {
+	slidesPerView: 3,
+	spaceBetween: 20,
+	loop: true,
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+});
+
 /**Formatting figures to 0x format with leading zero */
 function zeroPad(num, places) {
 	var zero = places - num.toString().length + 1;
 	return Array(+(zero > 0 && zero)).join("0") + num;
 }
 
-/**Block with slides pagination indicators */
+/**Block with slides pagination indicators Main Slider*/
 $(function () {
 	var slidesNumber = headerSwiper.slides.length;
 	var currentIndex = headerSwiper.activeIndex + 1;
@@ -46,6 +67,19 @@ $(function () {
 		$('.main-slider .swiper-button .prev-slide-counter').html(zeroPad(headerSwiper.activeIndex, 2));
 		$('.main-slider .swiper-button .next-slide-counter').html(zeroPad(headerSwiper.activeIndex + 2, 2));
 	})
+})
+
+/**Block with slides pagination indicators BestInTravel*/
+$(function () {
+	var slidesNumber = bestTravelSwiper.slides.length - 4;
+	var currentIndex = bestTravelSwiper.realIndex + 1;
+
+	$('.bestintravel .slider-counter .current-slide').html(zeroPad(currentIndex, 2));
+	$('.bestintravel .slider-counter .total-slides').html(zeroPad(slidesNumber, 2));
+	bestTravelSwiper.on('slideChange', function () {
+	$('.bestintravel .slider-counter .current-slide').html(zeroPad(bestTravelSwiper.realIndex + 1, 2));
+	})
+
 })
 
 function slidesBg () {
