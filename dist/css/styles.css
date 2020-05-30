@@ -569,7 +569,6 @@ body .swiper-button-next:after {
 
 .choice .swiper-container-wrapper {
   position: relative;
-  max-width: 1140px;
   margin: 0 auto; }
 
 .choice {
@@ -579,7 +578,6 @@ body .swiper-button-next:after {
   .choice .choice-carousel {
     padding-top: 40px;
     padding-bottom: 40px;
-    max-width: 1110px;
     margin: 70px auto 0; }
     .choice .choice-carousel .swiper-slide {
       transition: 1s ease; }
@@ -608,9 +606,6 @@ body .swiper-button-next:after {
       .choice .swiper-navigation .swiper-button-next path {
         fill: #f91c3b; }
 
-.blog-title-section .container {
-  max-width: 1110px; }
-
 .blog-title-section {
   margin-bottom: 40px;
   position: relative; }
@@ -634,6 +629,7 @@ body .swiper-button-next:after {
       max-width: 670px; }
 
 .blog-item {
+  min-height: 340px;
   margin-bottom: 30px;
   transition: 0.3s ease;
   position: relative; }
@@ -741,7 +737,6 @@ body .swiper-button-next:after {
     top: 0;
     background-color: #093868; }
   .section-newsletter .container {
-    max-width: 1110px;
     background-color: #093868;
     padding-top: 30px;
     padding-bottom: 30px; }
@@ -793,8 +788,6 @@ body .swiper-button-next:after {
 footer {
   background-color: #0b1326;
   padding-top: 180px; }
-  footer .container {
-    max-width: 1110px; }
 
 .footer-main {
   padding: 95px 0 45px; }
@@ -868,6 +861,18 @@ footer {
       position: absolute;
       content: '';
       background-color: #093868; }
+
+@media screen and (min-width: 1200px) {
+  .section-newsletter .container {
+    max-width: 1110px; }
+  footer .container {
+    max-width: 1110px; }
+  .blog-title-section .container {
+    max-width: 1110px; }
+  .choice .choice-carousel {
+    max-width: 1110px; }
+  .choice .swiper-container-wrapper {
+    max-width: 1140px; } }
 
 @media screen and (min-width: 1900px) {
   #welcome .col-img {
@@ -944,3 +949,73 @@ footer {
        object-fit: cover; }
   .main-slider .swiper-slide .slide-left-col {
     padding-bottom: 150px; } }
+
+@media screen and (max-width: 1023px) {
+  .bestintravel {
+    margin: 0 30px; }
+  .swiper-container.besttravel-carousel {
+    left: 0; }
+  .bestintravel .slider-counter {
+    display: none; }
+  #welcome {
+    padding-bottom: 60px; }
+  #welcome .col-img {
+    position: relative;
+    left: auto;
+    width: 100%; }
+  #welcome .col-img img {
+    width: 100%;
+    height: 300px;
+    -o-object-fit: cover;
+       object-fit: cover; }
+  #welcome .col-md-4.text {
+    flex-basis: 50%;
+    max-width: 50%; }
+  .choice {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .choice .swiper-navigation .swiper-button-next {
+    right: 30px; }
+  .choice .swiper-navigation .swiper-button-prev {
+    left: 30px; }
+  .bestintravel .img-overlay {
+    display: none; }
+  footer {
+    padding-left: 30px;
+    padding-right: 30px; }
+  .to_top-wrapper {
+    background-color: transparent; } }
+
+@media screen and (max-width: 991px) {
+  .blog_section .col-md-8 {
+    flex: 0 0 100%;
+    max-width: 100%; }
+  .blog_section .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%; }
+  .swiper-container.besttravel-carousel .swiper-slide .caption {
+    position: relative;
+    bottom: 0;
+    left: 0; }
+  footer .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%; }
+  .section-newsletter .title-block p {
+    padding-left: 0; }
+  .section-newsletter .title-block .title {
+    padding-left: 0; }
+  .section-newsletter {
+    margin-top: 50px; } }
+
+@media screen and (max-width: 639px) {
+  .swiper-container.besttravel-carousel .swiper-slide .caption {
+    max-width: 100%; }
+  #welcome .col-md-4.text {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding-right: 15px; } }
+
+@media screen and (max-width: 480px) {
+  footer .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%; } }

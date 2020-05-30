@@ -28,6 +28,25 @@ var bestTravelSwiper = new Swiper('.besttravel-carousel', {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
+	breakpoints: {
+
+		// when window width is <= 1023px
+		1023: {
+			 slidesPerView: 1,
+			 spaceBetween: 30
+		},
+		// when window width is <= 639px
+		639: {
+			 slidesPerView: 1,
+			 spaceBetween: 30
+		},
+		// when window width is <= 639px
+		480: {
+			 slidesPerView: 1,
+			 spaceBetween: 30
+		}
+
+ }
 });
 
 var choiceSwiper = new Swiper('.choice-carousel', {
@@ -38,6 +57,16 @@ var choiceSwiper = new Swiper('.choice-carousel', {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
+	 breakpoints: {
+		 // when window width is <= 639px
+	 639: {
+		slidesPerView: 1,
+ },
+ 	 // when window width is <= 480px
+		480: {
+			slidesPerView: 1,
+	 }
+	 }
 });
 
 /**Formatting figures to 0x format with leading zero */
