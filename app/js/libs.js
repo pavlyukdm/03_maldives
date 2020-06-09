@@ -5,7 +5,8 @@
 module.exports = function jslibs (){
 	return [
 		'./app/js/vendor/jquery.min.js',
-		'./app/js/vendor/swiper.min.js'
+		'./app/js/vendor/swiper.min.js',
+		'./app/js/vendor/slideout.min.js'
 	];
 }
 

@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  outline: none;
+}
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -85,12 +92,13 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9;
+	z-index: 9;
+	max-width: 100%;
 }
 
 .header_left {
   padding: 0 60px;
-  flex: 0 0 58%;
+  flex: 1 1 58%;
 
   .logo_wrapper {
     width: 160px;
@@ -106,7 +114,7 @@ header {
   display: flex;
   background-color: $red;
   padding: 43px 60px;
-  flex: 0 0 42%;
+  flex: 1 1 42%;
   justify-content: space-between;
 
   .menu_block {
@@ -232,6 +240,84 @@ header {
   transform: rotate(-90deg);
   transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 300px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  background-color: #FFF; /* A background-color is required */
+  min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+
+.panel:before {
+  content: '';
+  display: block;
+  background-color: rgba(0,0,0,0);
+  transition: background-color 0.5s ease-in-out;
+}
+
+.panel-open:before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,.5);
+  z-index: 99;
+}
+.slideout-menu {
+	background-color: $lightblue;
+	padding: 40px;
+    color: #fff;
+		font-size: 20px;
+		li {
+			padding: 10px 0;
+			text-transform: uppercase;
+			a{
+				transition: $trans;
+				&:hover {
+					color: $red;
+				}
+			}
+		}
+
+}
+
 
 .main-slider {
   background-position: 0 0;
@@ -515,7 +601,7 @@ body .swiper-button-next:after {
     }
   }
 }
-
+.main-slider .swiper-button svg {outline: none; height: 50px;}
 .main-slider {
   .swiper-button {
     &:hover {
@@ -524,7 +610,7 @@ body .swiper-button-next:after {
       }
 
       svg {
-        fill: $red;
+				fill: $red;
       }
     }
   }
@@ -849,7 +935,6 @@ body .swiper-button-next:after {
 }
 
 .blog-item {
-	min-height: 340px;
   margin-bottom: 30px;
   transition: $trans;
   position: relative;
@@ -1041,7 +1126,7 @@ body .swiper-button-next:after {
       }
 
       button {
-        flex: 0 0 90px;
+        flex: 0 1 90px;
         background-color: #fff;
         height: 85px;
 
@@ -1384,22 +1469,16 @@ footer {
 }
 
 @media screen and (max-width : 991px) {
-  .blog_section .col-md-8 {
+	.title-block .suptitle,
+	.title-block p,
+	.title-block .title {
+    padding-left: 0;
+}
+	.main-slider .slide-counter {font-size: 50px;}
+	.main-slider .swiper-button {background: none !important;}
+  .blog_section div[class^='col-'] {
     flex: 0 0 100%;
     max-width: 100%;
-  }
-
-  .blog_section .col-md-4 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  .swiper-container.besttravel-carousel .swiper-slide .caption {
-    position: relative;
-
-    bottom: 0;
-
-    left: 0;
   }
 
   footer .col-md-3 {
@@ -1416,17 +1495,31 @@ footer {
 	}
 	.section-newsletter {margin-top: 50px;}
 }
+@media screen and (max-width : 767px) {
+	.blog-item_media img {min-height: 360px;}
+	.blog-item {
+		min-height: 360px;
+	}
+	.main-slider .slider-counter {display: none;}
+}
 @media screen and (max-width : 639px) {
+	.blog-item_content .blog-item-main-content .blog-item_title.title_large {font-size: 18px;}
+	.swiper-container.besttravel-carousel .swiper-slide .caption .descr {display: none;}
 	.swiper-container.besttravel-carousel .swiper-slide .caption {max-width: 100%;}
 	#welcome .col-md-4.text {
     flex-basis: 100%;
 		max-width: 100%;
 		padding-right: 15px;
 }
+.header_left {display: none;}
 }
 @media screen and (max-width : 480px) {
+	.swiper-container.besttravel-carousel .swiper-slide .caption {position: relative; bottom: 0; left: 0;}
+	.main-slider .swiper-slide .title {font-size: 48px;}
 	footer .col-md-3 {
     flex: 0 0 100%;
     max-width: 100%;
-  }
+	}
+	.main-slider .swiper-button-prev {left: 10%;}
+	.main-slider .swiper-button-next {left: 30%;}
 }

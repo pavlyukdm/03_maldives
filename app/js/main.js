@@ -1,12 +1,3 @@
-// Look for .hamburger
-var hamburger = document.querySelector(".hamburger");
-// On click
-hamburger.addEventListener("click", function() {
-	// Toggle class "is-active"
-	hamburger.classList.toggle("is-active");
-	// Do something else, like open/close menu
-});
-
 var headerSwiper = new Swiper('.slider-container', {
 	slidesPerView: 1,
 	pagination: {
@@ -21,52 +12,32 @@ var headerSwiper = new Swiper('.slider-container', {
 
 
 var bestTravelSwiper = new Swiper('.besttravel-carousel', {
-	slidesPerView: 2,
-	spaceBetween: 30,
-	 loop: true,
+	slidesPerView: 1,
+	spaceBetween: 0,
+	loop: true,
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
 	breakpoints: {
-
-		// when window width is <= 1023px
-		1023: {
-			 slidesPerView: 1,
-			 spaceBetween: 30
+		1024: {
+			slidesPerView: 2,
+			spaceBetween: 30,
 		},
-		// when window width is <= 639px
-		639: {
-			 slidesPerView: 1,
-			 spaceBetween: 30
-		},
-		// when window width is <= 639px
-		480: {
-			 slidesPerView: 1,
-			 spaceBetween: 30
-		}
-
- }
+	}
 });
 
 var choiceSwiper = new Swiper('.choice-carousel', {
-	slidesPerView: 3,
+	slidesPerView: 1,
 	spaceBetween: 20,
 	loop: true,
 	navigation: {
 		nextEl: '.swiper-button-next',
 		prevEl: '.swiper-button-prev',
 	},
-	 breakpoints: {
-		 // when window width is <= 639px
-	 639: {
-		slidesPerView: 1,
- },
- 	 // when window width is <= 480px
-		480: {
-			slidesPerView: 1,
-	 }
-	 }
+	breakpoints: {
+		700: {slidesPerView: 3}
+	}
 });
 
 /**Formatting figures to 0x format with leading zero */
@@ -85,8 +56,8 @@ $(function () {
 	$('.main-slider .slider-counter .current-slide').html(zeroPad(currentIndex, 2));
 	$('.main-slider .slider-counter .total-slides').html(zeroPad(slidesNumber, 2));
 	headerSwiper.on('slideChange', function () {
-	$('.main-slider .progressbar-slide-index').html(zeroPad(headerSwiper.activeIndex + 1, 2));
-	$('.main-slider .slider-counter .current-slide').html(zeroPad(headerSwiper.activeIndex + 1, 2));
+		$('.main-slider .progressbar-slide-index').html(zeroPad(headerSwiper.activeIndex + 1, 2));
+		$('.main-slider .slider-counter .current-slide').html(zeroPad(headerSwiper.activeIndex + 1, 2));
 	})
 
 	$('.main-slider .swiper-button .prev-slide-counter').html(zeroPad(headerSwiper.activeIndex, 2));
@@ -106,12 +77,12 @@ $(function () {
 	$('.bestintravel .slider-counter .current-slide').html(zeroPad(currentIndex, 2));
 	$('.bestintravel .slider-counter .total-slides').html(zeroPad(slidesNumber, 2));
 	bestTravelSwiper.on('slideChange', function () {
-	$('.bestintravel .slider-counter .current-slide').html(zeroPad(bestTravelSwiper.realIndex + 1, 2));
+		$('.bestintravel .slider-counter .current-slide').html(zeroPad(bestTravelSwiper.realIndex + 1, 2));
 	})
 
 })
 
-function slidesBg () {
+function slidesBg() {
 	var prevItem = headerSwiper.activeIndex - 1;
 	var nextItem = headerSwiper.activeIndex + 1;
 
@@ -119,15 +90,56 @@ function slidesBg () {
 	bgNext = headerSwiper.imagesToLoad[nextItem] === undefined ? '' : headerSwiper.imagesToLoad[nextItem].src;
 
 	if (bgPrev) {
-		$('.main-slider .swiper-button-prev').css('background', 'url('+bgPrev+')');
+		$('.main-slider .swiper-button-prev').css('background', 'url(' + bgPrev + ')');
 	}
 	if (bgNext) {
-		$('.main-slider .swiper-button-next').css('background', 'url('+bgNext+')');
+		$('.main-slider .swiper-button-next').css('background', 'url(' + bgNext + ')');
 	}
 }
 
 /**Bg images on arrows navigations */
 $(function () {
-	slidesBg ()
+	slidesBg()
 	headerSwiper.on('slideChange', slidesBg)
 })
+
+
+var slideout = new Slideout({
+	'panel': document.getElementById('panel'),
+	'menu': document.getElementById('menu'),
+	'padding': 300,
+	'tolerance': 70,
+	'side': "right"
+});
+
+document.querySelector('.hamburger').addEventListener('click', function() {
+	slideout.toggle();
+});
+
+
+function close(eve) {
+  eve.preventDefault();
+  slideout.close();
+}
+
+slideout
+  .on('beforeopen', function() {
+    this.panel.classList.add('panel-open');
+  })
+  .on('open', function() {
+    this.panel.addEventListener('click', close);
+  })
+  .on('beforeclose', function() {
+    this.panel.classList.remove('panel-open');
+    this.panel.removeEventListener('click', close);
+	});
+
+	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
